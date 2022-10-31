@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbara {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 200px;
+    margin-left: -200px;
+    margin-bottom: 40px;
+}
+
+.input {
+    padding: 14px 20px;
+    width: 600px;
+    font-size: 25px;
+    border: none;
+    border-bottom: 2px solid #E60023;
+    outline: none;
+}
+
+.scroll-top {
+    z-index: 999;
+    position: fixed;
+    background-color: #fff;
+    width: 54px;
+    padding: 4px 4px;
+    height: 79px;
+    right: -20%;
+    bottom: 10px;
+    font-size: 32px;
+    line-height: 55px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #E60023;
+}
+
+.scroll-top.active {
+    right: 2%;
+    opacity: 1;
+}
+
+input:focus {
+    border: none;
+}
+
+.search-btn {
+    padding: 14px 20px;
+    font-size: 18px;
+    background-color: #E60023;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.m-top {
+    margin: 0;
+    margin: 216px auto;
+}
+
+.ooo {
+    margin-top: 400px;
+    font-size: 40px;
+    text-align: center;
+    color: #E60023;
+    background-color: #fff;
+    border: 10px solid #E60023;
+    border-radius: 30px;
+    padding: 20px 40px;
+    font-family: 'Poppins', sans-serif;
+    width: 1200px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.alert {
+    text-align: center;
+    margin-top: 10px;
+    color: #ff0000;
+}
+
+.none {
+    display: none;
+}
+
+.teg {
+    width: 450px;
+    height: 550px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.x {
+    padding: 10px 20px;
+    font-size: 38px;
+    background-color: #fff;
+    color: #E60023;
+    border: none;
+    border-bottom: 2px solid #E60023;
+    border-right: 2px solid #E60023;
+    margin-left: -5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.display-img {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 90%;
+}
+
+.image {
+    width: 432px;
+    height: 550px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.dicullo {
+    margin: 0;
+    height: 0;
+}
+
+@media (max-width: 1056px) {
+    .input {
+        max-width: 300px;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 556px) {
+    .input {
+        max-width: 150px;
+    }
+    .x {
+        padding: 13px 20px;
+        font-size: 28px;
+    }
+}
