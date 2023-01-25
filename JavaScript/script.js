@@ -9,7 +9,7 @@ let search = false;
 //default photos
 
 async function defaultPhotos() {
-    const data = await fetch('https://api.pexels.com/v1/curated&per_page=8000', {
+    const data = await fetch('https://api.pexels.com/v1/search?query=nature&per_page=8000', {
         method: 'GET',
         headers: {
             Accept: 'application/json',
@@ -18,20 +18,22 @@ async function defaultPhotos() {
     })
 
     const response = await data.json();
-    console.log(response);
 
     displayimg(response);
 }
 const disimg = document.querySelector('.display-img');
 
 function displayimg(response) {
-    console.log(response);
     response.photos.forEach(img => {
         const div = document.createElement('div');
+        div.className = 'li';
+        div.width = img.width
         div.innerHTML = `
-      <a class='dicullo'>
-        <img class='image' id=${img.id} src=${img.src.large} alt=${img.url}></img>
+      <a>
+        <img class='image' id=${img.id} src=${img.src.tiny} alt=${img.url}></img>
+        <p class='text'>${img.alt}</p>
       </a>
+    
     `
         disimg.appendChild(div)
 
@@ -49,7 +51,7 @@ function displayimg(response) {
             console.log(mainimg);
             place.innerHTML = `
         <a class='dicullo'>
-          <img class='teg' id=${mainimg[0].id} src=${mainimg[0].src.medium} alt=${mainimg[0].url}></img>
+          <img class='teg' src=${mainimg[0].src.medium} alt=${mainimg[0].url} width=${mainimg[0].width}></img>
         </a>
       `
             searchPhotos(mainimg[0].alt)
@@ -59,7 +61,7 @@ function displayimg(response) {
 
 async function searchPhotos(query) {
     disimg.innerHTML = '';
-    const data = await fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=8000`, {
+    const data = await fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=10000`, {
         method: 'GET',
         headers: {
             Accept: 'application/json',
@@ -120,3 +122,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 defaultPhotos();
+
+
